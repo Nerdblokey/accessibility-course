@@ -1,0 +1,54 @@
+/* Base styles with accessible defaults */
+:root {
+  --container: 72rem;
+  --gap: 1rem;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+}
+.container { max-width: var(--container); margin: 0 auto; padding: 0 1rem; }
+
+.skip-link {
+  position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden;
+}
+.skip-link:focus { position: static; width: auto; height: auto; padding: .5rem; background: #eee; display: inline-block; }
+
+.site-header, .site-footer { background: #111; color: #fff; }
+.site-header a, .site-footer a { color: #fff; }
+.site-header .container, .site-footer .container { padding: 1rem 1rem; }
+.site-nav ul { display: flex; gap: 1rem; list-style: none; padding: 0; margin: 0.5rem 0 0; flex-wrap: wrap; }
+.site-nav a[aria-current="page"] { text-decoration: underline; font-weight: 600; }
+
+h1, h2, h3 { line-height: 1.25; }
+main .button, .button {
+  display: inline-block; padding: .6rem 1rem; border: 2px solid #111;
+  text-decoration: none; font-weight: 600; border-radius: .4rem;
+}
+.button-secondary { background: transparent; border-color: #555; color: #111; }
+.button:focus-visible, a:focus-visible, button:focus-visible { outline: 3px solid #005fcc; outline-offset: 2px; }
+
+/* Progress */
+.progress {
+  position: relative; height: 1.5rem; background: #e5e5e5; border-radius: .4rem; overflow: hidden; max-width: 40rem;
+}
+.progress::before {
+  content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 0%;
+  background: #005fcc; transition: width .3s ease;
+}
+#progress-label { position: relative; z-index: 1; padding-left: .5rem; color: #fff; font-weight: 600; }
+
+details { border: 1px solid #ddd; padding: .75rem; border-radius: .4rem; margin-bottom: 1rem; }
+summary { font-weight: 600; cursor: pointer; }
+
+/* Responsive */
+@media (prefers-color-scheme: dark) {
+  body { background: #111; color: #f2f2f2; }
+  .site-header, .site-footer { background: #000; }
+  .progress { background: #333; }
+  .progress::before { background: #3b82f6; }
+  details { border-color: #444; }
+}

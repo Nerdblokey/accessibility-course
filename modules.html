@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Modules – Accessibility Auditing Course</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header role="banner" class="site-header">
+    <div class="container">
+      <h1>Modules</h1>
+      <nav aria-label="Primary" class="site-nav">
+        <ul>
+          <li><a href="index.html">Overview</a></li>
+          <li><a href="modules.html" aria-current="page">Modules</a></li>
+          <li><a href="templates.html">Templates</a></li>
+          <li><a href="resources.html">Resources</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1" class="container">
+    <p>Tick off each task as you complete it. Your progress is stored locally in your browser.</p>
+
+    <section id="module-list" aria-labelledby="modules-heading">
+      <h2 id="modules-heading">Course modules</h2>
+      <!-- Modules injected by JS -->
+    </section>
+
+    <section aria-labelledby="progress-summary">
+      <h2 id="progress-summary">Your progress</h2>
+      <div id="progress-bar" class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+        <span id="progress-label">0%</span>
+      </div>
+      <button id="reset-progress" type="button" class="button button-secondary">Reset progress</button>
+    </section>
+  </main>
+
+  <footer role="contentinfo" class="site-footer">
+    <div class="container">
+      <p>Keyboard shortcuts: Use Tab / Shift+Tab to move, Space to toggle checkboxes, Enter to expand sections.</p>
+    </div>
+  </footer>
+
+  <script src="js/modules-data.js"></script>
+  <script src="js/modules.js" defer></script>
+</body>
+</html>
